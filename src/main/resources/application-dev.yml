@@ -19,3 +19,18 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     show_sql: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:q9Y0b8qXhA4dJH0Vv9F9zvCqY4r4R6Yx3Gv8FZcRz2LZ6Kp8BzJzZcA7q2Zx4D8x}
+    issuer: ${JWT_ISSUER:api.sonawane.com}
+    access-ttl-second: ${JWT_ACCESS_TTL_SECOND:3600}
+    refresh-ttl-second: ${JWT_REFRESH_TTL_SECOND:84600}
+    refresh-token-cookie-name: ${JWT_COOKIE_NAME:refreshToken}
+    cookie-secure: ${JWT_COOKIE_SECURE:true}
+    cookie-http-only: ${COOKIE_HTTP_ONLY:true}
+    cookie-same-site: ${COOKIE_SAME_SITE:lax}
